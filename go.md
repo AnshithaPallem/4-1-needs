@@ -99,7 +99,8 @@ func main(){
                 fmt.Println()
             }
 }
-## Output:
+```
+## Output
 ```
 Enter the number of levels:
     1
@@ -108,7 +109,6 @@ Enter the number of levels:
  1234321
 123454321
 ```
-
 # week 4 cal standard deviation in math pkg
 ```go
 package main
