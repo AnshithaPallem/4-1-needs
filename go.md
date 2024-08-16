@@ -177,9 +177,21 @@ Enter number of rows: 4
 ```
 # week 6 take user input and addition of two strings
 ```go
-
+package main
+import "fmt"
+func main(){
+  fmt.Print("enter first string :")
+  var first string
+  fmt.Scanln(&first)
+  fmt.Print("enter second string :")
+  var second string
+  fmt.Scanln(&second)
+  fmt.Print(first+second)
+}
 ```
 ## output
 ```
-
+enter first string :hello
+enter second string :world
+helloworld
 ```
