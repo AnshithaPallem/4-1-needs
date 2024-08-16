@@ -74,3 +74,43 @@ Enter 1 for LCM and 2 for GCD
 2
 GCD of 3 and 8 is 1
 ```
+# week 2 print pyramid of numbers
+```
+package main
+import "fmt"
+func main() {
+var n int
+fmt.Print("Enter the number of levels: ")
+fmt.Scan(&n)
+for i:=1; i<=n; i++ {
+for j:=n; j<=n-i; j++ {
+fmt.Print(" ")
+}
+for j:=1;j<=i;j++ {
+fmt.Print(j)
+}
+for j:=i-1; j>=1; j-- {
+fmt.Print(j)
+}
+fmt.Println()
+}
+}
+```
+# week 5 print Floyd's Triangle
+```
+package main
+import "fmt"
+func main() {
+var rows int
+var temp int=1
+fmt.Print("Enter number of rows:")
+fmt.Scan(&rows)
+for i:=1;i<=rows;i++ {
+for k:=1;k<=i;k++ {
+fmt.Print("%d",temp)
+temp++
+}
+fmt.Println(" ")
+}
+}   
+```
