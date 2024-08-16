@@ -75,7 +75,7 @@ Enter 1 for LCM and 2 for GCD
 GCD of 3 and 8 is 1
 ```
 # week 2 print pyramid of numbers
-```
+```go
 package main
 import "fmt"
 func main() {
@@ -96,8 +96,17 @@ fmt.Println()
 }
 }
 ```
-# week 5 print Floyd's Triangle
+## output
 ```
+Enter the number of levels: 5
+1
+121
+12321
+1234321
+123454321
+```
+# week 5 print Floyd's Triangle
+```go
 package main
 import "fmt"
 func main() {
