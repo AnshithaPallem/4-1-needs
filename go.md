@@ -1,4 +1,4 @@
-# exp1.go lcm & gcd
+# week 1 lcm & gcd
 ```go
 package main
 
@@ -78,50 +78,94 @@ GCD of 3 and 8 is 1
 ```go
 package main
 import "fmt"
+func main(){
+              var n int
+              fmt.Print("Enter the number of levels:")
+              fmt.Scan(&n)
+              for i:=1;i<=n;i++{
+                  //print leading spaces
+                  for j:=1;j<=n-i;j++{
+                       fmt.Print(" ")
+                  }
+              //print numbers in increasing order
+              for j:=1;j<=i;j++{
+                  fmt.Print(j)
+              }
+               //print numbers in decreasing order
+              for j:=i-1;j>=1;j--{
+                  fmt.Print(j)
+              }
+           //move to next line
+                fmt.Println()
+            }
+}
+## Output:
+```
+Enter the number of levels:
+    1
+   121
+  12321
+ 1234321
+123454321
+```
+
+# week 4 cal standard deviation in math pkg
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
 func main() {
-var n int
-fmt.Print("Enter the number of levels: ")
-fmt.Scan(&n)
-for i:=1; i<=n; i++ {
-for j:=n; j<=n-i; j++ {
-fmt.Print(" ")
-}
-for j:=1;j<=i;j++ {
-fmt.Print(j)
-}
-for j:=i-1; j>=1; j-- {
-fmt.Print(j)
-}
-fmt.Println()
-}
+	var num [10]float64
+	var sum, mean, sd float64
+	fmt.Println("**********enter 10 elements************")
+	for i := 1; i <= 10; i++ {
+		fmt.Printf("enter %d element:", i)
+		fmt.Scan(&num[i-1])
+		sum += num[i-1]
+	}
+	mean = sum / 10
+	for j := 0; j < 10; j++ {
+		sd += math.Pow(num[j]-mean, 2)
+	}
+	sd = math.Sqrt(sd / 10)
+	fmt.Println("the sd is:", sd)
 }
 ```
 ## output
 ```
-Enter the number of levels: 5
-1
-121
-12321
-1234321
-123454321
+**********enter 10 elements************
+enter 1 element:2
+enter 2 element:3
+enter 3 element:4
+enter 4 element:5
+enter 5 element:6
+enter 6 element:7
+enter 7 element:8
+enter 8 element:9
+enter 9 element:10
+enter 10 element:11
+the sd is: 2.8722813232690143
 ```
 # week 5 print Floyd's Triangle
 ```go
 package main
 import "fmt"
-func main() {
-var rows int
-var temp int=1
-fmt.Print("Enter number of rows:")
-fmt.Scan(&rows)
-for i:=1;i<=rows;i++ {
-for k:=1;k<=i;k++ {
-fmt.Printf("%d",temp)
-temp++
-}
+func main(){
+              var rows int
+              var temp int=1
+              fmt.Print("Enter the number of rows:")
+              fmt.Scan(&rows)
+              for i:=1;i<=rows;i++{
+                  for k:=1;k<=i;k++{
+                       fmt.Print(" ",temp)
+              temp++
+                  }
 fmt.Println(" ")
 }
-}   
+} 
 ```
 ## output
 ```
@@ -130,4 +174,12 @@ Enter number of rows: 4
 2 3
 4 5 6
 7 8 9 10
+```
+# week 6 take user input and addition of two strings
+```go
+
+```
+## output
+```
+
 ```
