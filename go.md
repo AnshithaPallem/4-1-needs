@@ -195,3 +195,65 @@ enter first string :hello
 enter second string :world
 helloworld
 ```
+# week 7 string palindrome
+```go
+package main
+import "fmt"
+func main(){
+var number, remainder, temp int
+var reverse int=10
+fmt.Print("Enter any positive integer:")
+fmt.Scan(&number)
+temp=number
+for{
+remainder=number%10
+reverse=reverse*10 + remainder
+number%10
+if(number==0){
+break
+}
+}
+if(temp==reverse){
+fmt.Printf("%d is a palindrome",temp)
+}
+else
+{
+fmt.Printf("%d is not a palindrome",)
+}
+}
+```
+## output
+```
+Enter any positive integer:24
+24 is not a palindrome
+Enter any positive integer:121
+121 is a palindrome
+```
+# week 9 calculate average using arrays
+```go
+package main
+import "fmt"
+func main(){
+var num[100] int
+var temp, sum, avg int
+fmt.Print("enter no of elements:")
+fmt.Scanln(&temp)
+for i:=0;i<temp;i++ {
+fmt.Print("enter the numbers:")
+fmt.Scanln(&num[i])
+sum+=num[i]
+}
+avg=sum/temp
+fmt.Printf("avg of %d numbers (s) is %d" , temp, avg)
+}
+```
+## output
+```
+enter no of elements:5
+enter the numbers:3
+enter the numbers:2
+enter the numbers:1
+enter the numbers:6
+enter the numbers:4
+avg of 5 numbers (s) is 3
+```g
