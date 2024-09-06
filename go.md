@@ -221,6 +221,26 @@ else
 fmt.Printf("%d is not a palindrome",)
 }
 }
+------------------------------------------------
+package main
+import(
+"fmt"
+"strings"
+)
+func main(){
+var originalString string = "madam"
+var reverseString string = ""
+var length=len(originalString)
+
+for i:=length-1;i>=0;i-- {
+reverseString=reverseString + string(originalString[i])
+}
+if strings.ToLower(originalString)==strings.ToLower(reverseString){
+fmt.Println("The given string is palindrome");
+}else{
+fmt.Println("The given string is not a palindrome");
+}
+}
 ```
 ## output
 ```
