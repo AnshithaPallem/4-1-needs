@@ -256,4 +256,4 @@ enter the numbers:1
 enter the numbers:6
 enter the numbers:4
 avg of 5 numbers (s) is 3
-```g
+```
