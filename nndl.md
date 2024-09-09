@@ -73,96 +73,13 @@ Due to these advantages, ReLU is more commonly used in modern deep learning mode
 
 # 3. Update the parameters in the given MLP using back propagation with learning rate as 0.5 and activation function as sigmoid. Initial weights are given as W1= 0.2, W2=0.1, W3=0.1, W4-0.3, W5-0.2, W6-0.5, and biases as B1=-1, B2=.3, Bout=.7. The target output=1. Explain the importance of choosing the right step size in neural networks.
 <img width="310" alt="image" src="https://github.com/user-attachments/assets/2ebeeeeb-c570-42f8-8ac5-88715370ec8d">
+
 To solve this, we need to apply the backpropagation algorithm to update the weights of a simple Multilayer Perceptron (MLP) with a learning rate of 0.5 and the sigmoid activation function. Let’s break this problem into two parts: updating the weights using backpropagation and understanding the importance of choosing the right step size (learning rate).
-
-### Part 1: Update Weights using Backpropagation
-
-We are given:
-- Initial weights: \( W_1 = 0.2, W_2 = 0.1, W_3 = 0.1, W_4 = -0.3, W_5 = -0.2, W_6 = -0.5 \)
-- Biases: \( B_1 = -1, B_2 = 0.3, B_{out} = 0.7 \)
-- Learning rate (\( \alpha \)): 0.5
-- Target output (\( t \)): 1
-
-We’ll assume this is a basic 2-layer neural network with:
-- Input Layer: Two inputs, \( x_1 \) and \( x_2 \)
-- Hidden Layer: Two neurons, \( h_1 \) and \( h_2 \)
-- Output Layer: One neuron
-
-#### Step 1: Forward Pass
-1. **Input to the hidden layer neurons**:
-   - \( net_{h1} = W_1 x_1 + W_2 x_2 + B_1 \)
-   - \( net_{h2} = W_3 x_1 + W_4 x_2 + B_2 \)
-
-2. **Activation (sigmoid function) for the hidden layer**:
-   \[
-   h_1 = \sigma(net_{h1}) = \frac{1}{1 + e^{-net_{h1}}}
-   \]
-   \[
-   h_2 = \sigma(net_{h2}) = \frac{1}{1 + e^{-net_{h2}}}
-   \]
-
-3. **Input to the output neuron**:
-   \[
-   net_{out} = W_5 h_1 + W_6 h_2 + B_{out}
-   \]
-
-4. **Activation for the output neuron**:
-   \[
-   y = \sigma(net_{out}) = \frac{1}{1 + e^{-net_{out}}}
-   \]
-
-#### Step 2: Backward Pass (Calculate Error and Gradients)
-The error at the output is calculated as:
-\[
-E = \frac{1}{2}(t - y)^2
-\]
-
-1. **Output layer gradient**:
-   The derivative of the sigmoid activation function is:
-   \[
-   \sigma'(x) = \sigma(x)(1 - \sigma(x))
-   \]
-   For the output layer:
-   \[
-   \delta_{out} = (t - y) \cdot \sigma'(net_{out}) = (t - y) \cdot y \cdot (1 - y)
-   \]
-
-2. **Gradients for the output layer weights**:
-   \[
-   \frac{\partial E}{\partial W_5} = \delta_{out} \cdot h_1
-   \]
-   \[
-   \frac{\partial E}{\partial W_6} = \delta_{out} \cdot h_2
-   \]
-
-3. **Hidden layer gradients**:
-   For each hidden unit:
-   \[
-   \delta_{h1} = \delta_{out} \cdot W_5 \cdot \sigma'(net_{h1})
-   \]
-   \[
-   \delta_{h2} = \delta_{out} \cdot W_6 \cdot \sigma'(net_{h2})
-   \]
-
-4. **Gradients for the hidden layer weights**:
-   \[
-   \frac{\partial E}{\partial W_1} = \delta_{h1} \cdot x_1
-   \]
-   \[
-   \frac{\partial E}{\partial W_2} = \delta_{h1} \cdot x_2
-   \]
-   \[
-   \frac{\partial E}{\partial W_3} = \delta_{h2} \cdot x_1
-   \]
-   \[
-   \frac{\partial E}{\partial W_4} = \delta_{h2} \cdot x_2
-   \]
-
-#### Step 3: Update Weights
-Using the gradient descent rule, the weights are updated as:
-\[
-W_i = W_i + \alpha \cdot \frac{\partial E}{\partial W_i}
-\]
+![Screenshot 2024-09-09 145337](https://github.com/user-attachments/assets/7b3468b9-2aba-46ca-af9f-86335af0cb49)
+![Screenshot 2024-09-09 145347](https://github.com/user-attachments/assets/ea16d0af-86b9-4b00-82c5-4bc999de6782)
+![Screenshot 2024-09-09 145358](https://github.com/user-attachments/assets/8598306d-3680-4b26-844b-31f6b63f0752)
+![Screenshot 2024-09-09 145408](https://github.com/user-attachments/assets/68c26261-5392-4dc7-8dc1-3cb53556e81c)
+![Screenshot 2024-09-09 145417](https://github.com/user-attachments/assets/e292291a-d30d-40e0-8a92-b14cd3bf0d77)
 
 This process is repeated for all the weights and biases.
 
@@ -230,6 +147,7 @@ Here's a basic diagram of a feedforward neural network with one hidden layer:
        └───┘    └───┘       └───┘   └───┘
                           → h4
 ```
+![Screenshot 2024-09-09 145706](https://github.com/user-attachments/assets/df7000ea-10c3-4715-a217-cebe969a62aa)
 
 In this example:
 - **x1, x2, x3** are the inputs to the network.
@@ -273,23 +191,7 @@ A **Perceptron** is a type of artificial neuron used in machine learning, partic
 3. **Bias**: An additional parameter that allows the decision boundary to shift.
 4. **Activation Function**: A function that takes the weighted sum of inputs and outputs a decision (usually binary: 0 or 1). The most common activation function for a perceptron is the **step function**.
 
-### Perceptron Working Process:
-
-1. **Weighted Sum**: The perceptron calculates the weighted sum of the input features as:
-   \[
-   Z = w_1x_1 + w_2x_2 + ... + w_nx_n + b
-   \]
-   where \( w_i \) represents the weight associated with input \( x_i \), and \( b \) is the bias term.
-   
-2. **Activation Function**: The weighted sum \( Z \) is passed through a step activation function to determine the output:
-   \[
-   y = 
-   \begin{cases}
-   1 & \text{if } Z \geq 0 \\
-   0 & \text{if } Z < 0
-   \end{cases}
-   \]
-   If the weighted sum is above a certain threshold, the output is 1 (one class); otherwise, it is 0 (the other class).
+![Screenshot 2024-09-09 145811](https://github.com/user-attachments/assets/1b77c2da-862d-4702-a8a5-2ef45bcb43be)
 
 ---
 
@@ -304,6 +206,7 @@ Here is a simple diagram illustrating a perceptron:
                     /         (Weighted Sum)
         xn  -------┘
 ```
+![Screenshot 2024-09-09 145914](https://github.com/user-attachments/assets/045413dd-64d2-412c-b944-64361bda9c4d)
 
 In this example:
 - **\(x_1, x_2, ..., x_n\)** are the input features.
@@ -312,15 +215,7 @@ In this example:
 
 ---
 
-### Perceptron Example:
-
-Suppose we have two input features \(x_1\) and \(x_2\), and their respective weights \(w_1 = 0.4\) and \(w_2 = 0.6\), with a bias \(b = -0.3\). The step function will classify the input data into two classes based on the following decision rule:
-
-\[
-Z = (0.4 \times x_1) + (0.6 \times x_2) - 0.3
-\]
-
-If \( Z \geq 0 \), the output is classified as class 1, otherwise class 0.
+![Screenshot 2024-09-09 145952](https://github.com/user-attachments/assets/6298ad0e-d318-468b-a2e6-e241930ed2ce)
 
 ---
 
@@ -335,7 +230,160 @@ If \( Z \geq 0 \), the output is classified as class 1, otherwise class 0.
 
 The perceptron is the fundamental building block of more complex neural networks. While limited to linearly separable problems, it provides the foundation for understanding more advanced architectures like multi-layer perceptrons (MLPs) and deep neural networks. The perceptron's simple architecture allows it to classify binary outcomes by learning a set of weights that define a linear decision boundary.
 # 6. Explain the architecture of Artificial Neural Network.
+### Architecture of Artificial Neural Network (ANN):
+
+An **Artificial Neural Network (ANN)** is a computational model inspired by the structure and functioning of the human brain. It consists of layers of interconnected nodes (neurons) where each neuron is responsible for processing and passing information. ANN is designed to recognize patterns and relationships in data by learning from examples through training.
+
+The architecture of an ANN typically consists of three main layers:
+
+1. **Input Layer**
+2. **Hidden Layer(s)**
+3. **Output Layer**
+
+---
+
+### Components of ANN Architecture:
+
+1. **Input Layer**:
+   - The input layer consists of neurons (or nodes) that receive input data. Each node in the input layer represents a feature of the input dataset.
+   - This layer only passes the data to the hidden layers without performing any computations.
+   - Example: If you are feeding an image into the network, each pixel of the image could be a node in the input layer.
+
+2. **Hidden Layer(s)**:
+   - Hidden layers are the layers between the input and output layers where computation takes place.
+   - Each neuron in the hidden layer receives inputs from the previous layer, computes a weighted sum of these inputs, applies an activation function to introduce non-linearity, and passes the result to the next layer.
+   - The number of hidden layers and the number of neurons in each hidden layer define the complexity of the ANN. Networks with more hidden layers are referred to as **deep neural networks**.
+   - **Activation Functions**: These functions help the network learn complex patterns. Common activation functions are ReLU (Rectified Linear Unit), Sigmoid, and Tanh.
+
+3. **Output Layer**:
+   - The output layer provides the final output of the ANN based on the learned weights and biases from the hidden layers.
+   - The number of neurons in the output layer depends on the task. For binary classification, there is typically one output neuron, whereas for multi-class classification, the number of output neurons corresponds to the number of classes.
+   - The output layer neurons may also apply an activation function (e.g., Sigmoid for binary classification or Softmax for multi-class classification) to produce the final prediction.
+
+---
+
+### Diagram of an ANN:
+
+```
+    Input Layer      Hidden Layer 1    Hidden Layer 2    Output Layer
+    (Features)            (Neurons)        (Neurons)       (Neurons)
+   x1 ----> O -------→ O -------→ O -------→ O
+   x2 ----> O -------→ O -------→ O -------→ O
+   xn ----> O -------→ O -------→ O -------→ O
+```
+![Screenshot 2024-09-09 150128](https://github.com/user-attachments/assets/352f8cc1-b475-4b02-8b3d-fe6318b539fa)
+
+In this diagram:
+- **Input Layer**: Nodes \(x_1, x_2, ..., x_n\) represent the input features.
+- **Hidden Layers**: The circles (neurons) in the hidden layers are responsible for learning patterns from the data.
+- **Output Layer**: The final output is determined based on the neurons' activities in the hidden layers.
+
+---
+
+### Working of ANN:
+
+1. **Forward Propagation**:
+   - During forward propagation, data flows from the input layer to the output layer.
+   - Each hidden layer computes a weighted sum of the inputs, adds a bias, applies an activation function, and passes the result to the next layer.
+
+2. **Backpropagation**:
+   - After the network produces the output, the error (difference between actual and predicted output) is calculated.
+   - Backpropagation is used to adjust the weights and biases in the network to minimize the error. The error is propagated backward through the network from the output layer to the input layer.
+   - This process is iterated multiple times, and through training, the network gradually improves its performance.
+
+---
+
+### Key Concepts in ANN:
+
+1. **Weights**:
+   - Each connection between neurons has an associated weight that determines the importance of the input value. During training, the network adjusts the weights to reduce the error.
+
+2. **Bias**:
+   - Bias is an additional parameter added to the weighted sum of inputs, allowing the activation function to shift and enabling the model to fit the data more flexibly.
+
+3. **Activation Functions**:
+   - Activation functions introduce non-linearity into the network, which allows it to model complex relationships in the data. Common activation functions include:
+     - **Sigmoid**: Used for binary classification tasks.
+     - **ReLU (Rectified Linear Unit)**: Popular in deep learning because of its simplicity and effectiveness.
+     - **Tanh (Hyperbolic Tangent)**: Scales output between -1 and 1.
+
+---
+
+### Example of ANN:
+
+For a simple problem, such as classifying images of cats and dogs, the architecture of an ANN might include:
+- **Input Layer**: Neurons representing pixels of an image.
+- **Hidden Layer**: Neurons that learn abstract features, such as edges, shapes, and textures.
+- **Output Layer**: One neuron outputting a probability that the image is a cat or a dog.
+
+---
+
+### Summary:
+
+The architecture of an Artificial Neural Network is designed to mimic the neural structure of the human brain, consisting of input, hidden, and output layers. The network learns patterns from data through forward and backward propagation, adjusting weights and biases to improve predictions. ANN can solve complex problems by learning non-linear relationships, which makes it a powerful tool in tasks like image recognition, speech processing, and more.
 # 7. How do the feed forward neural network works, explain with the diagram?
+### Feedforward Neural Network (FNN) Overview:
+
+A **Feedforward Neural Network (FNN)** is the simplest type of artificial neural network where the information flows in one direction—from the input layer, through hidden layers (if any), to the output layer—without any feedback loops. It is called feedforward because the data passes through the network in a forward direction without cycles.
+
+---
+
+### Components of Feedforward Neural Network:
+
+1. **Input Layer**: This layer takes in input data features and passes them to the next layer.
+   
+2. **Hidden Layer(s)**: These layers perform computations on the input data by applying weights, biases, and activation functions. The complexity and depth of the network depend on the number of hidden layers.
+
+3. **Output Layer**: This layer gives the final prediction or output of the network based on the computations from the hidden layers.
+
+---
+
+![Screenshot 2024-09-09 150524](https://github.com/user-attachments/assets/72f255d1-5e35-4dce-a911-032c26440397)
+![Screenshot 2024-09-09 150533](https://github.com/user-attachments/assets/a4e0746f-e411-49e6-b1ab-0e466801e6d5)
+
+---
+
+### Diagram of a Feedforward Neural Network:
+
+```
+    Input Layer     Hidden Layer(s)     Output Layer
+      (x1, x2)          (z1, z2)           (y)
+    
+      x1 ----> O -------→ O -------→ O
+                  \        |         /
+      x2 ----> O ---→ O --→ O --→ O
+                  /        |         \
+      xn ----> O -------→ O -------→ O
+```
+![Screenshot 2024-09-09 150430](https://github.com/user-attachments/assets/1ac9a790-0bb7-4c1d-84f2-4c2352ea8708)
+
+- **Input Layer**: Represents the features of input data, such as pixel values of an image or words in a sentence.
+- **Hidden Layer**: Neurons in the hidden layer perform computations on the inputs, applying weights and activation functions.
+- **Output Layer**: Produces the final prediction, such as a class label in classification tasks.
+
+---
+
+### Example of Feedforward Neural Network:
+
+Consider a simple binary classification problem to determine if an image is a cat or a dog:
+
+1. **Input Layer**: The pixels of the image (say 28x28 pixels, so 784 inputs).
+2. **Hidden Layers**: Neurons learn patterns like edges, textures, and shapes.
+3. **Output Layer**: One neuron outputs the probability that the image is a cat (e.g., 0 for dog, 1 for cat).
+
+---
+
+### Characteristics of Feedforward Neural Network:
+
+- **Single-direction flow**: Data moves in a single direction, from input to output.
+- **No feedback loops**: No cycles or feedback connections exist, meaning no information is passed backward within the network.
+- **Supervised Learning**: Feedforward networks are typically trained with supervised learning algorithms like backpropagation.
+
+---
+
+### Conclusion:
+
+Feedforward Neural Networks are foundational models in neural networks and machine learning. They are used to process input data in a forward direction through multiple layers, applying weights, biases, and activation functions to learn from patterns and make predictions. Their simple, layered structure makes them suitable for tasks such as classification, regression, and pattern recognition.
 # 8. Explain the single feed forward neural network and multi feed forward neural network.
 # 9. Explain the purpose of activation function and activation summation with equations.
 # 10. Explain in detail any four practical issues in neural network training.
