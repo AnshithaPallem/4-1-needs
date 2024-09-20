@@ -277,3 +277,27 @@ enter the numbers:6
 enter the numbers:4
 avg of 5 numbers (s) is 3
 ```
+# week 11 reverse array sort for integers and strings
+```go
+package main
+import ("fmt"
+"sort"
+)
+func main(){
+fmt.Println("Integer Reverse sort")
+num:=[]int { 50,20,10,35,62}
+sort.Sort(sort.Reverse(sort.IntSlice(num)))
+fmt.Println(num)
+fmt.Println("String Reverse Sort")
+text:=[] string{"India", "Australia", "Japan", "Germany"}
+sort.Sort(sort.Reverse(sort.StringSlice(text)))
+fmt.Println(text)
+}
+```
+## output
+```
+Integer Reverse sort
+[62 50 35 20 10]
+String Reverse Sort
+[Japan India Germany Australia]
+```
