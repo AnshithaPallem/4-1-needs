@@ -329,3 +329,32 @@ Integer Reverse sort
 String Reverse Sort
 [Japan India Germany Australia]
 ```
+# week12 contains, contains any, count, equal fold string functions
+```go
+package main
+import (
+"fmt"
+"strings"
+)
+func main(){
+fmt.Println(strings.ContainsAny("Germany","G"))
+fmt.Println(strings.ContainsAny("Germany","g"))
+fmt.Println(strings.Contains("Germany","Ger"))
+fmt.Println(strings.Contains("Germany","ger"))
+fmt.Println(strings.Contains("Germany","er"))
+fmt.Println(strings.Count("cheese","e"))
+fmt.Println(strings.EqualFold("Cat","cAt"))
+fmt.Println(strings.EqualFold("India","Indiana"))
+}
+```
+## output
+```
+true
+false
+true
+false
+true
+3
+true
+false
+```
