@@ -277,6 +277,34 @@ enter the numbers:6
 enter the numbers:4
 avg of 5 numbers (s) is 3
 ```
+# week 10 delete duplicate element in array
+```go
+package main
+import "fmt"
+
+func removeDuplicate(arr[8]int) []int {
+map_var := map[int]bool{}
+	result := []int{}
+	for e := range arr {
+		if map_var[arr[e]] != true {
+		   map_var[arr[e]] = true
+		   result = append(result,arr[e])
+		}
+	}
+	return result
+}
+func main() {
+   arr := [8]int{1,2,2,4,4,5,7,5}
+   fmt.Println("The unsorted array entered is:", arr)
+   result := removeDuplicate(arr)
+   fmt.Println("Thr array obtained after removing the duplicate values is:", result)
+}
+```
+## output
+```
+The unsorted array entered is: [1 2 2 4 4 5 7 5]
+Thr array obtained after removing the duplicate values is: [1 2 4 5 7]
+```
 # week 11 reverse array sort for integers and strings
 ```go
 package main
