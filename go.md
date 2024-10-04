@@ -249,6 +249,31 @@ Enter any positive integer:24
 Enter any positive integer:121
 121 is a palindrome
 ```
+# week 8 build a contact form
+```go
+<!DOCTYPE html>
+<html>
+<head>
+<title> Simple Form Example </title>
+</head>
+<body>
+<h2> Submit Form </h2>
+<form action="/" method="post">
+<label for="name"> Name:</label><br>
+<input type="text" id="name" name="name" required> <br><br>
+
+<label for="email"> Email:</label><br>
+<input type="email" id="email" name="email" required> <br><br>
+
+<label for="email"> Message:</label><br>
+<input type="Message" id="Message" name="Message" required> <br><br>
+
+<input type="reset" value="reset">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+```
 # week 9 calculate average using arrays
 ```go
 package main
