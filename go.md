@@ -274,6 +274,30 @@ Enter any positive integer:121
 </body>
 </html>
 ```
+```
+package main
+import (
+	"fmt"
+	"net/http"
+)
+func main() {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.ServeFile(w, r, "form.html")
+			return
+		}
+		r.ParseForm() // Parse form data
+		name := r.Form.Get("name")
+		email := r.Form.Get("email")
+		fmt.Println("Name:", name)
+		fmt.Println("Email:", email)
+
+		fmt.Fprintf(w, "Received form submission\nName: %s\nEmail: %s\n", name, email)
+	})
+	fmt.Println("Server is running on localhost:8080")
+	http.ListenAndServe(":8080", nil) // Corrected port specification
+}
+```
 # week 9 calculate average using arrays
 ```go
 package main
