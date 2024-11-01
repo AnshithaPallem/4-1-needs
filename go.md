@@ -422,10 +422,10 @@ func main() {
 	
 	go func() {
 		defer processTest.Done()
-		for i := 0; i < 30; i++ {
-			for j := 51; j <= 100; j++ {
+		for i := 0; i < 3; i++ {
+			for j := 15; j <= 25; j++ {
 				fmt.Printf(" %d", j)
-				if j == 100{
+				if j == 18{
 					fmt.Println()
 				}
 			}
@@ -434,10 +434,10 @@ func main() {
 
 	go func() {
 		defer processTest.Done()
-		for j := 0; j < 10; j++ {
-			for char := 'A'; char < 'A'+26; char++ {
+		for j := 0; j < 3; j++ {
+			for char := 'A'; char < 'A'+10; char++ {
 				fmt.Printf("%c ", char)
-				if char == 'Z' {
+				if char == 'F' {
 					fmt.Println()
 				}
 			}
@@ -446,10 +446,10 @@ func main() {
 
 	go func() {
 		defer processTest.Done()
-		for i := 0; i < 30; i++ {
-			for j := 0; j <= 50; j++ {
+		for i := 0; i < 3; i++ {
+			for j := 0; j <= 15; j++ {
 				fmt.Printf(" %d", j)
-				if j == 50 {
+				if j == 10 {
 					fmt.Println()
 				}
 			}
