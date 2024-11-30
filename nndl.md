@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/7198fb72-df91-4728-8a5c-a6092b505fca)# NEURAL NETWORK AND DEEP LEARNING
+# NEURAL NETWORK AND DEEP LEARNING
 
 # 1.Illustrate the limitation of a single layer perceptron with an example.
 <img width="388" alt="image" src="https://github.com/user-attachments/assets/a361e285-c44f-4156-a73a-dce0420b9e91">
