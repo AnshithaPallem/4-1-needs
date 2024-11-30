@@ -889,3 +889,61 @@ This process is repeated iteratively to reduce the cost and improve the model's 
 - The **cost function** can vary depending on the type of problem (e.g., MSE for regression, cross-entropy for classification).
 
 # What is mean square error and learning rate parameter.
+### 1. **Mean Squared Error (MSE)**
+
+**Mean Squared Error (MSE)** is a commonly used cost function or loss function in regression tasks. It measures the average squared difference between the predicted values (\(\hat{y}_i\)) and the actual values (\(y_i\)) from the dataset. The goal is to minimize the MSE to improve the model's accuracy in predicting the target variable.
+
+#### Formula:
+\[
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\]
+
+Where:
+- \(y_i\) is the true value of the target variable for the \(i\)-th data point.
+- \(\hat{y}_i\) is the predicted value of the target variable for the \(i\)-th data point.
+- \(n\) is the number of data points.
+
+#### Explanation:
+- **Squaring the differences**: The squared difference ensures that positive and negative errors don't cancel each other out. Larger errors are penalized more heavily because the error is squared.
+- **Averaging**: Dividing by the number of data points (\(n\)) gives an average error, so it's scale-independent.
+
+#### Use Case:
+- MSE is widely used for **regression problems** (predicting continuous values).
+- A smaller MSE indicates a better fit of the model to the data.
+
+### 2. **Learning Rate Parameter**
+
+The **learning rate** (\(\eta\)) is a hyperparameter in machine learning algorithms, especially in gradient-based learning methods like **gradient descent**. It controls the step size at each iteration while moving toward a minimum of the cost function.
+
+#### Role of Learning Rate:
+- **Learning rate** determines how much to adjust the model's parameters (weights and biases) during training based on the gradient of the cost function.
+- It plays a crucial role in ensuring that the model converges to an optimal or near-optimal solution.
+
+#### Formula for Parameter Update in Gradient Descent:
+\[
+\theta = \theta - \eta \cdot \nabla_\theta J(\theta)
+\]
+Where:
+- \(\theta\) represents the model parameters (weights and biases).
+- \(\eta\) is the learning rate.
+- \(\nabla_\theta J(\theta)\) is the gradient of the cost function with respect to the parameters.
+
+#### Types of Learning Rates:
+- **Small learning rate** (\(\eta\)): 
+   - Leads to slow convergence. The model may require more iterations to reach the minimum of the cost function.
+   - May prevent overshooting the optimal solution.
+   - Can get stuck in local minima or plateau regions.
+  
+- **Large learning rate** (\(\eta\)): 
+   - May speed up convergence but risks overshooting the minimum.
+   - Could cause the model to miss the optimal solution or lead to divergence.
+
+#### Finding the Right Learning Rate:
+- **Too high**: If the learning rate is too high, the model may oscillate or diverge because it overshoots the optimal solution.
+- **Too low**: If it's too low, training will be slow, and the model might take too long to converge, or it could get stuck in local minima.
+  
+Some techniques like **learning rate decay**, **adaptive learning rates** (e.g., **Adam**, **RMSprop**) dynamically adjust the learning rate during training to avoid these issues.
+
+#### Summary:
+- **MSE** is a loss function used in regression to quantify the difference between predicted and actual values.
+- **Learning rate** controls the magnitude of changes to the model’s parameters during training in gradient descent, impacting the speed and success of convergence.
