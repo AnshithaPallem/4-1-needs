@@ -855,20 +855,20 @@ The choice of cost function depends on the type of problem being solved (e.g., r
 
 #### 1. **Mean Squared Error (MSE) - Common in Regression**
    
-    ![Screenshot 2024-11-30 194117](https://github.com/user-attachments/assets/463d369f-803c-4f6f-bf58-1816566be768)
 
+![Screenshot 2024-11-30 194538](https://github.com/user-attachments/assets/a7828776-1107-47a1-ab0a-cc7ffb436227)
 
    - **Explanation:**  
      The Mean Squared Error is used for regression tasks. It calculates the average squared difference between the predicted values and the true values. Squaring the differences helps penalize larger errors more.
 
 #### 2. **Cross-Entropy Loss (Log Loss) - Common in Classification**
-  ![Screenshot 2024-11-30 194159](https://github.com/user-attachments/assets/cf5ba84c-fae5-46a4-9afd-bce3c1d3972f)
+![Screenshot 2024-11-30 194545](https://github.com/user-attachments/assets/5115a06b-d305-434b-acd7-f804cd668896)
 
    - **Explanation:**  
      Cross-entropy loss is used for binary or multi-class classification problems. It measures the difference between the true class labels and the predicted probabilities. The function penalizes incorrect classifications by assigning a higher penalty as the predicted probability diverges from the true label.
 
 #### 3. **Hinge Loss - Common in SVM (Support Vector Machines)**
-  ![image](https://github.com/user-attachments/assets/c92c456b-9fe0-4b01-b590-6a1d07c846fb)
+![Screenshot 2024-11-30 194551](https://github.com/user-attachments/assets/91de449d-9097-4ec9-b6bb-1d2a16328948)
 
    
    - **Explanation:**  
@@ -878,7 +878,7 @@ The choice of cost function depends on the type of problem being solved (e.g., r
 
 In **gradient descent**, the model parameters (weights and biases) are updated by computing the gradient of the cost function with respect to these parameters. The gradient points in the direction of the steepest increase in cost, so the parameters are adjusted in the opposite direction to minimize the cost function.
 
-![Screenshot 2024-11-30 194159](https://github.com/user-attachments/assets/18d4a5c6-51cd-442f-a40f-6b7d6b79a28c)
+![Screenshot 2024-11-30 194559](https://github.com/user-attachments/assets/241688c6-43b3-4468-9d9e-a0b2005b020f)
 
 
 This process is repeated iteratively to reduce the cost and improve the model's performance.
@@ -893,15 +893,8 @@ This process is repeated iteratively to reduce the cost and improve the model's 
 
 **Mean Squared Error (MSE)** is a commonly used cost function or loss function in regression tasks. It measures the average squared difference between the predicted values (\(\hat{y}_i\)) and the actual values (\(y_i\)) from the dataset. The goal is to minimize the MSE to improve the model's accuracy in predicting the target variable.
 
-#### Formula:
-\[
-MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-\]
+![Screenshot 2024-11-30 194701](https://github.com/user-attachments/assets/dbf72406-8123-4e72-9c65-1b9efdb3c966)
 
-Where:
-- \(y_i\) is the true value of the target variable for the \(i\)-th data point.
-- \(\hat{y}_i\) is the predicted value of the target variable for the \(i\)-th data point.
-- \(n\) is the number of data points.
 
 #### Explanation:
 - **Squaring the differences**: The squared difference ensures that positive and negative errors don't cancel each other out. Larger errors are penalized more heavily because the error is squared.
@@ -911,32 +904,10 @@ Where:
 - MSE is widely used for **regression problems** (predicting continuous values).
 - A smaller MSE indicates a better fit of the model to the data.
 
-### 2. **Learning Rate Parameter**
+![Screenshot 2024-11-30 194751](https://github.com/user-attachments/assets/d79fc19a-5ebb-4427-b606-19cc001a3a20)
+![Screenshot 2024-11-30 194803](https://github.com/user-attachments/assets/8743861e-0fd2-48c5-8281-4d504b8c61b7)
+![Screenshot 2024-11-30 194818](https://github.com/user-attachments/assets/71d8fb67-83e4-4ac5-8b86-736561d6f6ee)
 
-The **learning rate** (\(\eta\)) is a hyperparameter in machine learning algorithms, especially in gradient-based learning methods like **gradient descent**. It controls the step size at each iteration while moving toward a minimum of the cost function.
-
-#### Role of Learning Rate:
-- **Learning rate** determines how much to adjust the model's parameters (weights and biases) during training based on the gradient of the cost function.
-- It plays a crucial role in ensuring that the model converges to an optimal or near-optimal solution.
-
-#### Formula for Parameter Update in Gradient Descent:
-\[
-\theta = \theta - \eta \cdot \nabla_\theta J(\theta)
-\]
-Where:
-- \(\theta\) represents the model parameters (weights and biases).
-- \(\eta\) is the learning rate.
-- \(\nabla_\theta J(\theta)\) is the gradient of the cost function with respect to the parameters.
-
-#### Types of Learning Rates:
-- **Small learning rate** (\(\eta\)): 
-   - Leads to slow convergence. The model may require more iterations to reach the minimum of the cost function.
-   - May prevent overshooting the optimal solution.
-   - Can get stuck in local minima or plateau regions.
-  
-- **Large learning rate** (\(\eta\)): 
-   - May speed up convergence but risks overshooting the minimum.
-   - Could cause the model to miss the optimal solution or lead to divergence.
 
 #### Finding the Right Learning Rate:
 - **Too high**: If the learning rate is too high, the model may oscillate or diverge because it overshoots the optimal solution.
@@ -947,3 +918,88 @@ Some techniques like **learning rate decay**, **adaptive learning rates** (e.g.,
 #### Summary:
 - **MSE** is a loss function used in regression to quantify the difference between predicted and actual values.
 - **Learning rate** controls the magnitude of changes to the model’s parameters during training in gradient descent, impacting the speed and success of convergence.
+
+# Explain the least mean square algorithm.
+### Least Mean Squares (LMS) Algorithm
+
+The **Least Mean Squares (LMS)** algorithm is an adaptive filter algorithm used for minimizing the error between a desired signal and an actual output in a system. It is often used for signal processing, system identification, and adaptive noise cancellation. The LMS algorithm adjusts the weights of a filter based on the error signal, using the gradient descent method to minimize the mean square error (MSE) between the predicted and desired outputs.
+
+The main objective of the LMS algorithm is to find the optimal filter weights that minimize the squared error over time.
+
+### Steps of the LMS Algorithm:
+![Screenshot 2024-11-30 195045](https://github.com/user-attachments/assets/eda237ac-4c67-4e8b-bb56-b0d55f4eb4db)
+![Screenshot 2024-11-30 195107](https://github.com/user-attachments/assets/22363343-3b8e-4b22-842b-b4ec28438abe)
+![Screenshot 2024-11-30 195117](https://github.com/user-attachments/assets/43b024ea-fb02-43c9-8edf-b6e6274331d3)
+
+
+### Key Features:
+- **Adaptivity**: The LMS algorithm is adaptive, meaning it adjusts the filter weights automatically as new input samples arrive.
+- **Simple and Efficient**: It only requires knowledge of the input signal and the error signal to update the weights. This makes it computationally efficient.
+- **Gradient Descent**: The algorithm works by performing gradient descent on the cost function, which is typically the squared error between the desired output and the predicted output.
+
+### Application Areas:
+1. **Noise Cancellation**: LMS can be used for adaptive noise cancellation, where the goal is to remove noise from a signal using an adaptive filter.
+2. **System Identification**: It can identify unknown systems by adapting the filter to match the system's output.
+3. **Equalization**: In communication systems, LMS can be used to equalize signals by adapting the filter to remove distortion.
+
+### Advantages of LMS:
+- **Low Complexity**: It has a relatively low computational complexity compared to other adaptive filtering algorithms, making it suitable for real-time applications.
+- **Simple Implementation**: The LMS algorithm is easy to implement and requires only basic operations (multiplication and addition).
+- **Adaptability**: LMS can adapt to changing environments and noisy data.
+
+### Disadvantages of LMS:
+- **Slow Convergence**: The algorithm can converge slowly, especially if the learning rate is too small.
+- **Sensitive to Step Size**: A large learning rate might cause instability, while a small learning rate might make convergence too slow.
+- **Local Minima**: Like many gradient descent methods, LMS might get stuck in local minima, which can limit its performance in some cases.
+
+In conclusion, the **LMS algorithm** is a simple and effective method for adaptive filtering and is widely used in applications like noise reduction, echo cancellation, and system identification due to its efficiency and ease of implementation.
+# Explain the back propagation algorithm in MLP.
+### Backpropagation Algorithm in Multi-Layer Perceptron (MLP)
+
+The **Backpropagation algorithm** is the most widely used algorithm for training **Multi-Layer Perceptrons (MLPs)**, which are a type of **artificial neural network (ANN)**. It is a supervised learning algorithm that adjusts the weights of the network by minimizing the error (or loss) through a process of **gradient descent**.
+
+The main goal of backpropagation is to compute the gradient of the loss function with respect to each weight in the network and use this gradient to update the weights in a way that reduces the error.
+
+### Basic Components of an MLP:
+1. **Input Layer**: The layer that receives the input features.
+2. **Hidden Layers**: Layers between the input and output layers where computation is done using activation functions.
+3. **Output Layer**: The layer that produces the network's final output.
+
+### Backpropagation Process
+
+#### 1. **Forward Pass** (Propagation)
+The forward pass involves passing the input data through the network to calculate the output. Here’s how it works:
+- Each neuron in a layer computes a weighted sum of the inputs it receives, adds a bias term, and then applies an **activation function** to produce its output.
+- The output of each layer becomes the input to the next layer.
+  
+![Screenshot 2024-11-30 195333](https://github.com/user-attachments/assets/0e30c472-56f0-4367-acbb-2a5b09881fb8)
+![Screenshot 2024-11-30 195341](https://github.com/user-attachments/assets/44571dee-7020-405f-ab9c-35af9d513c35)
+
+#### 3. **Backward Pass (Backpropagation)**
+The backpropagation step computes the gradient of the loss function with respect to each weight in the network, and this is done using the **chain rule of calculus**. The idea is to propagate the error backward through the network, layer by layer.
+
+##### Step-by-Step Backpropagation:
+![Screenshot 2024-11-30 195433](https://github.com/user-attachments/assets/fa5f7fe8-1307-452e-91ed-4c62bcff0638)
+![Screenshot 2024-11-30 195442](https://github.com/user-attachments/assets/31057240-9075-4b89-b818-7c630674ba99)
+![Screenshot 2024-11-30 195450](https://github.com/user-attachments/assets/4df20ef7-2816-49ec-92ad-6c198fd76eca)
+
+
+#### 4. **Repeat**:
+This process is repeated for multiple iterations (or epochs), each time adjusting the weights to minimize the error. Over time, as the network is trained on many examples, the weights converge to values that allow the network to make accurate predictions.
+
+### Example of Backpropagation in Action:
+
+Let’s consider a simple MLP with:
+- One hidden layer.
+- Sigmoid activation functions.
+- One output neuron.
+
+![Screenshot 2024-11-30 195535](https://github.com/user-attachments/assets/6e40577e-d8d8-4cfb-aabe-74da054f1353)
+
+#### Repeat:
+- Continue updating the weights for multiple epochs until the error reaches a satisfactory level.
+
+### Summary:
+The **backpropagation algorithm** in an MLP allows the network to **learn from its errors** by adjusting the weights to minimize the error over time. This is achieved through the **gradient descent** method, where gradients of the loss function are computed via the chain rule and used to update the weights iteratively. By repeating this process over many iterations, the MLP gradually improves its performance on tasks such as classification and regression.
+
+# Discuss the working of the deep forward neural network
