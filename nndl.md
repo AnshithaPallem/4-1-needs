@@ -590,21 +590,25 @@ Error-correction learning is a crucial mechanism in neural network training, par
 ![image](https://github.com/user-attachments/assets/c98dd630-60be-4d65-97a5-57c27632a9de)
 ### Memory-Based Learning
 
-Memory-based learning is a type of learning where all the past experiences (training examples) are explicitly stored in memory. The learning process does not involve explicit model building, but instead relies on the similarity between new test data and the stored examples. The key components of memory-based learning include:
+### **Memory-Based Learning (MBL)**
 
-1. **Local Neighborhood Definition**: 
-   - Memory-based learning algorithms define a local neighborhood for each test vector, meaning they rely on the data that is closest or most similar to the test vector.
+Memory-Based Learning is a machine learning approach where the model explicitly stores all or most of the training data and uses it to make predictions for new, unseen data. Instead of creating an abstract model, the algorithm relies on the stored examples for decision-making.
 
-2. **Learning Rule**:
-   - The learning rule is applied to the stored examples that fall within this neighborhood.
+![Screenshot 2024-12-01 205814](https://github.com/user-attachments/assets/331ed49d-ccb0-46cc-91ca-a10f2ae47331)
+![Screenshot 2024-12-01 205822](https://github.com/user-attachments/assets/7e2f1eb9-794a-49b1-890e-289df0b121a4)
 
-![Screenshot 2024-11-30 191259](https://github.com/user-attachments/assets/aec24d45-f702-4dca-aaa0-a0a06521b523)
+#### **Applications of Memory-Based Learning:**
+- Pattern recognition (e.g., handwritten digit recognition).
+- Recommendation systems.
+- Natural Language Processing (e.g., text similarity tasks).
 
+#### **Advantages:**
+- Simple and intuitive.
+- Effective for small datasets.
 
-#### k-Nearest Neighbor (k-NN):
-- In the **k-nearest neighbor (k-NN)** variant, the test vector is classified based on the majority class among the **k nearest neighbors**. This approach smooths out the influence of outliers since a single outlier has less influence when considering multiple neighbors.
-- The test vector is assigned to the most frequent class among its **k nearest neighbors**.
-
+#### **Disadvantages:**
+- Computationally expensive for large datasets.
+- Sensitive to noise and irrelevant features.
 ### Hebbian Learning
 
 **Hebbian Learning** is a biologically inspired learning rule based on Hebb's postulate, which is often described as "**cells that fire together, wire together**." This rule is fundamental in understanding associative learning in biological neural networks. Hebb’s rule emphasizes the strengthening of synaptic connections between neurons that are activated simultaneously.
