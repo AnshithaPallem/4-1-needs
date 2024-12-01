@@ -1465,7 +1465,8 @@ By using these techniques, under-constrained problems can be tackled more effect
 
 A typical CNN consists of multiple layers, each with a specific role to extract progressively more complex features from the input data. The main components of a CNN architecture are as follows:
 
----
+![WhatsApp Image 2024-12-01 at 11 28 58_ab2501df](https://github.com/user-attachments/assets/850631f3-248d-4374-a5d9-efe5c8a05ac9)
+
 
 ### **1. Input Layer**
 - **Description**: The input layer represents the raw data fed into the network, such as a color image. For example, an image might be represented as a 3D array (height x width x channels), where the channels could represent color channels (e.g., RGB).
