@@ -122,7 +122,7 @@ The key components of ANNs include:
   2. **Hidden Layers**: Process the data through transformations.
   3. **Output Layer**: Produces the final result (e.g., predictions or classifications).
 - A neural network with **two or more hidden layers** is called a **deep neural network (DNN)**.
-![image](https://github.com/user-attachments/assets/7bae6cec-46a4-4990-8463-a87de167723a)
+![image](https://github.com/user-attachments/assets/9045dd1d-2ca7-418a-b7c7-ec499885f416)
 
 ### How ANNs Learn
 ANNs learn by adjusting the **weights** of the connections between neurons. This adjustment happens using a process called a **learning algorithm**, which helps the network improve its performance over time. The learning process involves:
