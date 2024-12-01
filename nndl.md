@@ -1121,6 +1121,7 @@ Regularizing autoencoders are a type of **autoencoder** designed to improve the 
 3. **Contractive Autoencoders (CAEs)**:
    - **Objective**: Regularize the hidden representation by penalizing its sensitivity to small changes in the input.
    - **Regularization Mechanism**: Add a penalty based on the Frobenius norm of the Jacobian of the hidden layer activations:
+     
 ![Screenshot 2024-12-01 222424](https://github.com/user-attachments/assets/485b65d2-5ae5-4792-841b-a02d385eeb64)
 
    - **Benefits**: Learn representations that are robust to small input perturbations.
@@ -1128,6 +1129,7 @@ Regularizing autoencoders are a type of **autoencoder** designed to improve the 
 4. **Variational Autoencoders (VAEs)**:
    - **Objective**: Learn a probabilistic latent space, enabling the generation of new data samples.
    - **Regularization Mechanism**: Introduce a **KL divergence penalty** between the learned latent distribution and a prior distribution (e.g., Gaussian).
+     
     ![Screenshot 2024-12-01 222432](https://github.com/user-attachments/assets/2fc8d5a7-781e-4aec-baf9-4255961123e3)
 
    - **Applications**: Generative modeling, anomaly detection.
