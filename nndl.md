@@ -611,34 +611,51 @@ Memory-Based Learning is a machine learning approach where the model explicitly 
 - Sensitive to noise and irrelevant features.
 ### Hebbian Learning
 
-**Hebbian Learning** is a biologically inspired learning rule based on Hebb's postulate, which is often described as "**cells that fire together, wire together**." This rule is fundamental in understanding associative learning in biological neural networks. Hebb’s rule emphasizes the strengthening of synaptic connections between neurons that are activated simultaneously.
+**Hebbian Learning** is one of the foundational learning principles in artificial neural networks. It is based on the idea that the connection strength between two neurons increases when they are activated simultaneously. This principle is often summarized as:
 
-#### Key Concepts of Hebbian Learning:
+> **"Neurons that fire together, wire together."**
 
-1. **Synchronous Activation**:
-   - If two neurons (presynaptic and postsynaptic) are activated at the same time (synchronously), the strength of their synaptic connection is increased. This strengthens the connection, making it more likely that the postsynaptic neuron will be activated when the presynaptic neuron fires in the future.
+![Screenshot 2024-12-01 210321](https://github.com/user-attachments/assets/79960671-fc7b-422c-9ae0-a9027e6165be)
+
+![Screenshot 2024-12-01 210327](https://github.com/user-attachments/assets/8c21c4d7-7d3b-44dd-8e9e-3fbf161232cd)
+
+
+### **Characteristics of Hebbian Learning**
+1. **Local Learning Rule**:  
+   Only the neurons directly connected by a synapse affect the weight update.
    
-2. **Asynchronous Activation**:
-   - If the neurons fire at different times (asynchronously), the synaptic connection between them is weakened or eliminated.
+2. **Correlation-Based**:  
+   The weight update depends on the correlation between presynaptic and postsynaptic activity.
 
-#### Key Mechanisms of Hebbian Synapses:
+3. **Time-Dependent**:  
+   The update occurs during the simultaneous activation of neurons.
 
-1. **Time-Dependent Mechanism**:
-   - The strength of a synapse depends on the **exact timing** of when the presynaptic and postsynaptic neurons fire. If they fire together, the synaptic strength increases; if not, it may decrease.
+---
 
-2. **Local Mechanism**:
-   - The information about the synaptic change is locally determined, meaning the change occurs based on the interaction between the presynaptic and postsynaptic neurons at the synapse level.
+### **Applications in Neural Networks**
+1. **Unsupervised Learning**:  
+   Hebbian learning is often used in unsupervised learning tasks, where the goal is to identify patterns or correlations in the input data.
 
-3. **Interactive Mechanism**:
-   - The synaptic change is determined by the interaction between both the presynaptic and postsynaptic signals. A synapse undergoes a change when both signals are active together, and this interaction is crucial for learning.
+2. **Pattern Recognition**:  
+   It helps neural networks learn associations or identify features in the data.
 
-4. **Conjunctional (Correlational) Mechanism**:
-   - The change in synaptic strength occurs when the presynaptic and postsynaptic neurons fire together, creating a **correlation** between the two activities. This correlation over time is considered the basis for the learning rule.
+3. **Cognitive Models**:  
+   Hebbian learning is inspired by biological learning processes and is used to model memory and learning in artificial systems.
 
-#### Hebbian Synapse:
-- A **Hebbian synapse** strengthens or weakens based on the correlation of activities between the presynaptic and postsynaptic neurons. It is often referred to as a **conjunctional** or **correlational** synapse because the modification in synaptic strength relies on the co-occurrence of the neural signals.
+---
 
-### Summary:
+### **Limitations of Hebbian Learning**
+1. **Runaway Feedback**:  
+   Continuous strengthening of synapses can lead to instability (unbounded growth of weights).
+
+2. **No Weight Normalization**:  
+   Hebbian learning does not inherently normalize weights, which can lead to disproportionate weight values.
+
+3. **Lack of Error Correction**:  
+   It is purely correlation-based and does not involve minimizing an explicit error function.
+
+![Screenshot 2024-12-01 210338](https://github.com/user-attachments/assets/d0f32381-d76a-4716-828a-b92b6a44be2f)
+## Summary:
 
 - **Memory-Based Learning**:
   - In this approach, past experiences (input-output pairs) are stored in memory, and learning occurs by finding the most similar or nearest examples in the memory to the new test data.
