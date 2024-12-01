@@ -568,6 +568,7 @@ These practical issues can significantly affect the performance and efficiency o
    - These output units help transform the model’s internal features into a form that can be compared to the target data, with the cost function guiding the adjustments needed to minimize the prediction error.
 
 In essence, **gradient-based learning** in neural networks is a process where the model's parameters are iteratively adjusted to minimize a cost function. The key challenges stem from the non-convexity of the loss function, and effective strategies like careful weight initialization and choosing the appropriate cost function are crucial to achieving successful training.
+
 **Error-Correction Learning** is a learning rule used in neural networks to minimize the error between the network's output and the desired output. This method relies on adjusting the weights of the network iteratively based on the error signal generated from the comparison of the actual output and the target output.
 
 ### Key Concepts:
