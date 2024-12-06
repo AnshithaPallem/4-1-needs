@@ -122,28 +122,14 @@ Convolution involves sliding a small matrix called a **filter (or kernel)** over
 ### **Example**
 #### Input:
 A 6x6 image:
-\[
-\begin{bmatrix}
-1 & 2 & 3 & 4 & 5 & 6 \\
-7 & 8 & 9 & 10 & 11 & 12 \\
-13 & 14 & 15 & 16 & 17 & 18 \\
-19 & 20 & 21 & 22 & 23 & 24 \\
-25 & 26 & 27 & 28 & 29 & 30 \\
-31 & 32 & 33 & 34 & 35 & 36
-\end{bmatrix}
-\]
+
+![Screenshot 2024-12-06 173657](https://github.com/user-attachments/assets/444e3beb-d055-4082-86c7-8319287c0e9a)
 
 #### Filter (3x3):
-\[
-\begin{bmatrix}
-1 & 0 & -1 \\
-1 & 0 & -1 \\
-1 & 0 & -1
-\end{bmatrix}
-\]
 
-### **In Short**:
-Convolution simplifies and transforms an image into feature maps by detecting patterns using small filters. It’s like scanning the image with a magnifying glass that highlights specific features, making it easier for the model to understand.
+![Screenshot 2024-12-06 173702](https://github.com/user-attachments/assets/0f746bf6-72e0-488a-ac32-620c48c6ce54)
+
+- Convolution simplifies and transforms an image into feature maps by detecting patterns using small filters. It’s like scanning the image with a magnifying glass that highlights specific features, making it easier for the model to understand.
 # Pooling
 Pooling is a technique used in **Convolutional Neural Networks (CNNs)** to reduce the size of feature maps, making the model faster and more efficient. It also helps retain important information while discarding unnecessary details.
 
