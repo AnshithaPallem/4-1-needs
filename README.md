@@ -256,39 +256,34 @@ Structured outputs help deep learning models tackle real-world problems where si
 
 
 # Recurrent Neural Networks
-**Recurrent Neural Networks (RNNs)** are a type of deep learning model designed to work with sequential data, such as time series, sentences, or any data where the order of the inputs matters.
 
-### Key Features:
-1. **Memory of Past Inputs**:
-   - Unlike regular neural networks, RNNs have loops that allow information to persist over time.
-   - This means that RNNs can remember previous inputs in the sequence and use that memory to make predictions for the next steps in the sequence.
+Recurrent Neural Networks (RNNs) are a type of neural network designed for processing sequential data (like time series, text, or speech).RNNs can remember information from previous steps in a sequence and use it to make predictions at the current step.
+  
+  In simple words, RNNs "look back" at previous inputs to make decisions, just like how we remember past experiences to make sense of the present.
 
-2. **Structure**:
-   - An RNN takes an input at each time step, processes it, and outputs a result.
-   - The important feature is that the hidden state of the network is passed from one time step to the next, allowing the network to "remember" past inputs.
+### **How RNN Works**
+1. **Input Sequence**: You feed in a sequence of data (e.g., words in a sentence, stock prices over time).
+2. **Hidden State**: The network has an internal memory called a **hidden state** that updates after each input in the sequence.
+3. **Output**: After processing the entire sequence, the RNN makes predictions based on the sequence and its memory.
 
-3. **How It Works**:
-   - At each time step, the RNN takes an input (like a word in a sentence or a stock price at a given time).
-   - It processes the input, updates its memory (the hidden state), and passes the updated memory to the next time step.
-   - This allows RNNs to make predictions based on both the current input and previous ones.
+### **Example: Predicting Next Word in a Sentence**
+- Sentence: "I love to eat"
+- RNN will process each word one by one and update its memory:
+  - After "I": Memory is updated to know it’s a start of a sentence.
+  - After "love": Memory is updated to understand it's a positive sentiment.
+  - After "to": Memory stores the action is related to an activity.
+  - After "eat": Memory now helps predict what could come next (e.g., "food").
 
-4. **Applications**:
+### **Why RNNs?**
+- **Sequence Handling**: RNNs are great for tasks where the order matters, like speech recognition, language translation, and time-series forecasting.
+- **Shared Weights**: Same weights are used at each step, so they can learn patterns across the entire sequence.
+
+**Applications**:
    - **Text**: Language translation, sentiment analysis, text generation.
    - **Speech**: Speech recognition.
    - **Time series**: Stock price prediction, weather forecasting.
 
-### Simple Example:
-Imagine an RNN is predicting the next word in a sentence:
-- If the input is "I am going to the," the RNN remembers that "I am" refers to the speaker, "going" means action, and "to the" means a destination.
-- Based on this memory, it can predict the next word, such as "store" or "park."
-
-### Limitations:
-- **Vanishing Gradient Problem**: RNNs struggle to remember information over long sequences because the gradients used in training become too small to learn from distant inputs.
-- This problem is partially solved by **Long Short-Term Memory (LSTM)** and **Gated Recurrent Units (GRUs)**, which are specialized versions of RNNs.
-
-### Summary:
-- RNNs are great for handling sequences of data by remembering past information.
-- They're used in tasks where the order of the data matters, like speech, text, and time series analysis.
+- RNNs are neural networks with memory that process data step-by-step, allowing them to make predictions based on both the current input and past inputs in a sequence.
 
 
 # unit 5
