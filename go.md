@@ -112,7 +112,7 @@ Enter the number of levels:
 # week 3 use struct that is imported from another package
 ```go
 package main
-import ("fmt", "newpack")
+import ("fmt" "newpack")
 func main(){
 result:= newpack.square(6)
 fmt.Println("Square of 6 is:", result)
