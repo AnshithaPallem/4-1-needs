@@ -109,6 +109,26 @@ Enter the number of levels:
  1234321
 123454321
 ```
+# week 3 use struct that is imported from another package
+```go
+package main
+import ("fmt", "newpack")
+func main(){
+result:= newpack.square(6)
+fmt.Println("Square of 6 is:", result)
+}
+```
+## square.go
+```go
+package newpack
+func square(x int) int{
+return x * x
+}
+```
+## output
+```
+Square of 6 is: 36
+```
 # week 4 cal standard deviation in math pkg
 ```go
 package main
